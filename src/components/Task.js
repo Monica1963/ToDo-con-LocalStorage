@@ -1,17 +1,4 @@
 import { Row, Col, Button, Badge } from "react-bootstrap";
-// import styled from "styled-components";
-
-// const Alert = styled.div`
-// 	align-items: center;
-// 	justify-content: between;
-
-// 	margin-bottom: 5px;
-// 	border: 1px solid transparent;
-// 	border-radius: 4px;
-// 	color: #468847;
-// 	background-color: #dff0d8;
-// 	border-color: #d6e9c6;
-// `;
 
 const Task = ({ tarea, remove, toggleTask, modo }) => {
 	const deleteT = () => {
@@ -30,9 +17,8 @@ const Task = ({ tarea, remove, toggleTask, modo }) => {
 	return (
 		<>
 			<li className="list-group-item" key={tarea.id}>
-				{/* <Alert key={tarea.id}> */}
 				<Row className="row justify-content-between">
-					<Col md={7}>
+					<Col md={3}>
 						<label>
 							{" "}
 							ID
@@ -41,12 +27,30 @@ const Task = ({ tarea, remove, toggleTask, modo }) => {
 						<label>
 							{tarea.titulo}: <span> </span>
 						</label>{" "}
+					</Col>
+					<Col md={3}>
 						<label> {tarea.descripcion}</label>
-						<Badge variant="badge bg-secondary m-3"> {tarea.responsable}</Badge>
+					</Col>
+					<Col md={1}>
+						<Badge
+							variant={
+								tarea.responsable === "Sin asignar"
+									? "badge bg-secondary m-3"
+									: "badge bg-info m-3"
+							}
+						>
+							{" "}
+							{tarea.responsable}
+						</Badge>
+					</Col>
+					<Col md={1}>
 						<Badge variant="badge bg-primary m-3 ">{tarea.prioridad}</Badge>
 					</Col>
-					<Col md={2}>
+					<Col md={1}>
 						<button
+							data-bs-toggle="tooltip"
+							title="Cambiar Estado"
+							tabindex="0"
 							className={
 								tarea.state
 									? "btn btn-success btn-sm"
@@ -58,7 +62,7 @@ const Task = ({ tarea, remove, toggleTask, modo }) => {
 						</button>
 					</Col>
 					{!tarea.state && (
-						<Col md={3}>
+						<Col md={2}>
 							<Button variant="primary" size="sm" onClick={editar}>
 								Editar
 							</Button>{" "}
@@ -74,7 +78,6 @@ const Task = ({ tarea, remove, toggleTask, modo }) => {
 						</Col>
 					)}
 				</Row>
-				{/* </Alert> */}
 			</li>
 		</>
 	);

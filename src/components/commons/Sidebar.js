@@ -8,6 +8,7 @@ const PanelIzq = styled.div`
 	padding: 1.5rem;
 	margin-top: 2rem;
 	font-weight: 900;
+	background-color: rgb(240, 234, 234);
 `;
 
 const Sidebar = ({

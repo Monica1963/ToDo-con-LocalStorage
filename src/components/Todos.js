@@ -10,23 +10,25 @@ const Fila = styled.div`
 
 const Todos = ({ tareas, remove, toggleTask, titulo, modo }) => {
 	return (
-		<Fila>
-			<h3>
-				Lista<span> de Tareas {titulo}</span>
-			</h3>
+		<>
+			<Fila>
+				<h4>
+					Lista<span> de Tareas {titulo}</span>
+				</h4>
 
-			{tareas.length === 0
-				? "No hay tareas"
-				: tareas.map((tarea) => (
-						<Task
-							key={tarea.id}
-							tarea={tarea}
-							remove={remove}
-							toggleTask={toggleTask}
-							modo={modo}
-						/>
-				  ))}
-		</Fila>
+				{tareas.length === 0
+					? "No hay tareas"
+					: tareas.map((tarea) => (
+							<Task
+								key={tarea.id}
+								tarea={tarea}
+								remove={remove}
+								toggleTask={toggleTask}
+								modo={modo}
+							/>
+					  ))}
+			</Fila>
+		</>
 	);
 };
 

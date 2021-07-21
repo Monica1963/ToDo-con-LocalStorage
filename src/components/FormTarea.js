@@ -58,7 +58,7 @@ const FormTarea = ({
 		const { titulo, descripcion, prioridad, responsable } = edit;
 		if (titulo.trim() === "" || descripcion.trim() === "") {
 			setError("Título y Descripción son campos obligatorios!");
-			//alert("Debes completar título y descripción para poder continuar!");
+
 			return;
 		}
 
@@ -72,7 +72,7 @@ const FormTarea = ({
 
 		const resp = () => {
 			if (responsable.trim() === "") {
-				return "SIN ASIGNAR";
+				return "Sin asignar";
 			} else {
 				return edit.responsable;
 			}
@@ -99,7 +99,7 @@ const FormTarea = ({
 
 		if (titulo.trim() === "" || descripcion.trim() === "") {
 			setError("Título y Descripción son campos obligatorios!");
-			//alert("Debes completar título y descripción para poder continuar!");
+
 			return;
 		}
 

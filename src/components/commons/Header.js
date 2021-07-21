@@ -19,10 +19,10 @@ const Header = ({ cuenta, pendientes, finalizadas }) => {
 				<h1>TASK App ✔ </h1>
 				<h2>
 					<Badge variant="badge bg-secondary m-3">
-						{cuenta.filter((t) => !t.state).length} pendientes
+						Pendientes: {cuenta.filter((t) => !t.state).length}
 					</Badge>{" "}
 					<Badge variant="badge bg-secondary m-3">
-						{cuenta.filter((t) => t.state).length} finalizadas
+						Finalizadas: {cuenta.filter((t) => t.state).length}
 					</Badge>{" "}
 				</h2>
 			</Encabezado>
